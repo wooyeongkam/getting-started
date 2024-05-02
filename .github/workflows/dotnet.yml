@@ -14,13 +14,8 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        #uses: wooyeongkam/hello-world-docker-action@v6
-        shell: bash
-        with:
-          who-to-greet: 'Mona the Octocat'
-        run: |
-          ehco "Hello $1"
+        uses: wooyeongkam/hello-world-docker-action@v6
           
-#      - name: Get the output time
-#        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
 
