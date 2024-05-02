@@ -14,7 +14,13 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: wooyeongkam/hello-world-docker-action@v6
+        shell: bash
+        env:
+          name: 'kam'
+        run: |
+          echo "Hello $name"
+          time=$(date)
+          echo "::set-output name=time::$time"
           
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
