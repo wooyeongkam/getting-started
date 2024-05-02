@@ -14,9 +14,9 @@ jobs:
     steps:
       - name: hello world action step
         id: hello
-        uses: wooyeongkam/hello-world-docker-action@v4
+        uses: wooyeongkam/hello-world-docker-action@v5
         with:
           who-to-greet: 'kam'
       - name: get the outpu time
-        run: echo "the time was ${{ steps.hello.ouputs.time }}"
+        run: echo "the time was ${{ steps.hello.outputs.time }}"
   
