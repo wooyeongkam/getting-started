@@ -6,23 +6,17 @@ name: .NET
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
 
 jobs:
-  build:
-
+  hello_world_jobs:
     runs-on: ubuntu-latest
-
+    name: A job to say hello
     steps:
-    - uses: actions/checkout@v4
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 3.1.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      - name: hello world action step
+        id: hello
+        uses: wooyeongkam/hello-world-action@v1
+        with:
+          who-to-greet: 'kam'
+      - name: get the outpu time
+        run: echo "the time was ${{ steps.hello.ouputs.time }}"
+  
