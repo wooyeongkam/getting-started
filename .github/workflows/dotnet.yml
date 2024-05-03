@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: wooyeongkam/hello-world-docker-action@v12
+        uses: wooyeongkam/hello-world-docker-action@v13
         with:
           who-to-greet: "kam"
           
